@@ -5,10 +5,10 @@ name=$3
 partitionname=$4
 
 /usr/bin/expect <<!
-set timeout -1
+#set timeout -1
 spawn fdisk $diskname
 expect "m for help"
-exec sleep 0.2
+exec sleep 0.5
 send "n\r"
 expect "Select (default p)"
 send "p\r"
@@ -21,11 +21,11 @@ send "$disksize\r"
 expect "m for help"
 exec sleep 0.5
 send "t\r"
-exec sleep 0.1
 send "\r"
 expect "Hex code (type L to list all codes)*"
 send "8e\r"
 expect "m for help"
+exec sleep 0.5
 send "w\r"
 send "q\r"
 expect eof

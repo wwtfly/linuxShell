@@ -30,7 +30,7 @@ def login(ip,user,password,port):
 
 def sftpToRemote(conn):
     sftp=conn.open_sftp()
-    sftp.put('./formatDisk.sh')
+    sftp.put('./log.log','/home/wwtlfy')
     sftp.close()
 
 def modHostname(conn,cmd):
@@ -89,7 +89,8 @@ if __name__ == "__main__":
     # cmd="df -h"
     # modHostname(conn,cmd)
     for i in range(3):
-        cmd="bash /home/wwtfly/formatDisk.sh /dev/sdb +100M sdb%d /dev/sdb%d" %(i+2,i+2)
+        cmd="bash /home/wwtfly/formatDisk.sh /dev/sdb +100M sdb%d /dev/sdb%d" %(i+1,i+1)
+        # cmd="df -h"
         print(cmd)
         modDisk(conn,param,cmd)
     conn.close()
