@@ -1,9 +1,16 @@
 node:
   -ip: 192.168.31.21
-  hostname: wwtfly
-  password: 211314
-  newpasswrod: 123456
-  -path: /dev/xvde
-    -partitionname: /dev/xvde1
-      mountname: /opt
-      size: 10G
+    hostname: wwtfly
+    password: 211314
+    newpasswrod: 123456
+    -disk: /dev/xvde
+      -partitionname: /dev/xvde1
+        mountname: /opt
+        size: 10G
+      -partitionname: /dev/xvde2
+        mountname: /opt/test
+        size: 10G
+    -disk: /dev/xvdf
+      -partition:/dev/xvdf1
+        mountname:/opt/data
+        size: 20G
