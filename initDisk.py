@@ -1,4 +1,5 @@
 import paramiko
+import yaml
 # import socket
 
 ip="192.168.253.130"
@@ -9,6 +10,11 @@ hostname="wwt"
 # paramiko.util.log_to_file('./log.log')
 
 param={"path":"/dev/sdb","patition":{"name":"/dev/sdb1","size":"500M"}}
+def getParams():
+    with open(r'./initDisk.yaml') as f:
+        params=yaml.load(f)
+    print(params)
+
 
 def login(ip,user,password,port):
     try:
