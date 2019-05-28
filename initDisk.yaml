@@ -3,7 +3,7 @@ node:
     hostname: "wwtfly"
     password: "211314"
     newpasswrod: "123456"
-  - disk:
+    disk:
       - path: "/dev/xvde"
         partition: 
           - ptname: "/dev/xvde1"
@@ -15,6 +15,22 @@ node:
           - ptname: "/dev/xvde3"
             mountname: "/opt"
             size: "10G"
+      - path: "/dev/xvdf"
+        partition: 
+          - ptname: "/dev/xvdf1"
+            mountname: "/opt"
+            size: "10G"
+          - ptname: "/dev/xvdf2"
+            mountname: "/opt"
+            size: "10G"
+          - ptname: "/dev/xvdf3"
+            mountname: "/opt"
+            size: "10G"
+  - ip: "192.168.31.21"
+    hostname: "wwtfly"
+    password: "211314"
+    newpasswrod: "123456"
+    disk:
       - path: "/dev/xvde"
         partition: 
           - ptname: "/dev/xvde1"
@@ -24,5 +40,16 @@ node:
             mountname: "/opt"
             size: "10G"
           - ptname: "/dev/xvde3"
+            mountname: "/opt"
+            size: "10G"
+      - path: "/dev/xvdf"
+        partition: 
+          - ptname: "/dev/xvdf1"
+            mountname: "/opt"
+            size: "10G"
+          - ptname: "/dev/xvdf2"
+            mountname: "/opt"
+            size: "10G"
+          - ptname: "/dev/xvdf3"
             mountname: "/opt"
             size: "10G"
